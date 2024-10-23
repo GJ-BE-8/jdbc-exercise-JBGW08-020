@@ -33,6 +33,14 @@ public class Student {
         this.age = age;
         this.createdAt = LocalDateTime.now();
     }
+
+    public Student(String id, String name, GENDER gender, Integer age, LocalDateTime createdAt) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+        this.createdAt = createdAt;
+    }
     public void createStudentTable() throws SQLException {
         Connection connection = DbUtils.getConnection();
         Statement statement = connection.createStatement();
