@@ -5,6 +5,7 @@ import com.nhnacademy.jdbc.student.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 
+import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.Optional;
 import java.util.Random;
@@ -16,7 +17,7 @@ class PreparedStatementStudentRepositoryTest {
     public static StudentRepository studentRepository;
 
     @BeforeAll
-    static void setUp(){
+    static void setUp() throws SQLException {
         studentRepository = new PreparedStatementStudentRepository();
 
         Random random = new Random();
