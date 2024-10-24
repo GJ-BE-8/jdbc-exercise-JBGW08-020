@@ -78,6 +78,12 @@
             <version>0.8.12</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>
