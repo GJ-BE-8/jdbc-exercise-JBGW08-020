@@ -25,11 +25,12 @@ public class ClubRepositoryImpl implements ClubRepository {
             pstmt.setString(1, clubId);
             ResultSet rs = pstmt.executeQuery();
 
-            rs.next();
-            String clubName = rs.getString("clubName");
-            LocalDateTime clubCreatedAt = LocalDateTime.parse(rs.getString("club_created_at"), fomatter);
+            if (rs.next()) {
+                String clubName = rs.getString("club_name");
+                LocalDateTime clubCreatedAt = LocalDateTime.parse(rs.getString("club_created_at"), fomatter);
 
-            club = new Club(clubId, clubName, clubCreatedAt);
+                club = new Club(clubId, clubName, clubCreatedAt);
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
